@@ -1,0 +1,26 @@
+{
+  "name": "datastructures",
+  "version": "1.0.0",
+  "description": "Implement different data structures using typescript",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkterungwa16/datastructures.git"
+  },
+  "keywords": [
+    "Stack",
+    "Queues",
+    "Linked-Lists",
+    "Graphs",
+    "Binary-Trees"
+  ],
+  "author": "Terungwa Kombol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rkterungwa16/datastructures/issues"
+  },
+  "homepage": "https://github.com/rkterungwa16/datastructures#readme"
+}
