@@ -7,7 +7,10 @@ export class Stack {
     }
 
     public push(element: any) {
-        this.dataStore[this.top++] = element;
+        // this.top++: Apply original value then increment;
+        // ++this.top: Increment original value then apply value;
+        this.dataStore[this.top] = element;
+        this.top = this.top + 1;
     }
 
     public pop() {

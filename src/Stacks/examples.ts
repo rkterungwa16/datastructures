@@ -8,7 +8,7 @@ import {
  * @param {Number} base base to convert to
  * @return {String} a string representation of the number with new Base
  */
-function numberBaseConverter(num: number, base: number): string {
+const numberBaseConverter = (num: number, base: number): string => {
     const s = new Stack();
     do {
         s.push(num % base);
@@ -30,7 +30,7 @@ console.log(numberBaseConverter(32, 2));
  * @param {String} word string to check if a palindrome
  * @return {Boolean} return true if it is a palindrome else return false
  */
-function isPalindrome(word: string) {
+const isPalindrome = (word: string) => {
     const stackOfAlphabets = new Stack();
     for (let alphabet of word.toLowerCase().split("")) {
         const isAlphabet = /\w/;
@@ -49,4 +49,21 @@ function isPalindrome(word: string) {
 }
 
 console.log(isPalindrome('Deleveled'))
+
+const recursiveFactorialSimulation = (number: number) => {
+    let stackOfIntegers = new Stack();
+    let product: number = 1;
+    while (number > 1) {
+        stackOfIntegers.push(number);
+        number = number - 1;
+    }
+
+    while (stackOfIntegers.length() > 0) {
+        product *= stackOfIntegers.pop();
+    }
+
+    return product;
+}
+
+console.log("recursive", recursiveFactorialSimulation(4));
 
