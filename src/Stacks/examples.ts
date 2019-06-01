@@ -1,6 +1,6 @@
 import {
     Stack
-} from './';
+} from "./";
 
 /**
  * Convert the base of a number from decimal to any base
@@ -48,7 +48,7 @@ const isPalindrome = (word: string) => {
     return reverseOfWord === word.toLowerCase();
 }
 
-console.log(isPalindrome('Deleveled'))
+console.log(isPalindrome("Deleveled"))
 
 const recursiveFactorialSimulation = (number: number) => {
     let stackOfIntegers = new Stack();
@@ -67,3 +67,43 @@ const recursiveFactorialSimulation = (number: number) => {
 
 console.log("recursive", recursiveFactorialSimulation(4));
 
+const balancedParentheses = (arithmeticExpression: string) => {
+    const arithmeticExpressionElts = new Stack();
+    for (let arithmeticExpElt of arithmeticExpression.split("")) {
+        const exists = ["[", "{", "("].includes(arithmeticExpElt)
+        if (exists) {
+            arithmeticExpressionElts.push(arithmeticExpElt);
+        }
+        if (arithmeticExpressionElts.length() === 0) {
+            return false;
+        }
+
+        switch(arithmeticExpElt) {
+            case "]":
+                const isNotBracket = arithmeticExpressionElts.peek();
+                arithmeticExpressionElts.pop();
+                if (["}", ")"].includes(isNotBracket)) {
+                    return false;
+                };
+                break;
+            case "}":
+                const isNotBraces = arithmeticExpressionElts.peek();
+                arithmeticExpressionElts.pop();
+                if (["]", ")"].includes(isNotBraces)) {
+                    return false;
+                };
+                break;
+            case ")":
+                const isNotParentheses = arithmeticExpressionElts.peek();
+                arithmeticExpressionElts.pop();
+                if (["]", ")"].includes(isNotParentheses)) {
+                    return false;
+                };
+                break;
+        }
+        
+    }
+    return arithmeticExpressionElts.length() === 0;
+}
+
+console.log("Balanced Parenthensis", balancedParentheses("{()}[]"))
