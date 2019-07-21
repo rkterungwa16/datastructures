@@ -101,7 +101,7 @@ const balancedParentheses = (arithmeticExpression: string) => {
                 };
                 break;
         }
-        
+
     }
     return arithmeticExpressionElts.length() === 0;
 }

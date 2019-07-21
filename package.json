@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/rkterungwa16/datastructures/issues"
   },
-  "homepage": "https://github.com/rkterungwa16/datastructures#readme"
+  "homepage": "https://github.com/rkterungwa16/datastructures#readme",
+  "devDependencies": {
+    "@types/node": "^12.6.8"
+  }
 }
